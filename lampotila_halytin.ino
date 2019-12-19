@@ -40,15 +40,22 @@ void korkea(){        //Vastaava kuin ylemmät
     delay(15); 
 }
 
-void loop() {
+float mittaus(){
   analogVal = analogRead(ANALOGPIN);        //Lukee A0 pinnin analogisen lukeman ja määrittää sen analogVal nimelle
-  float aste = (-9.00/70.00)*analogVal+91;  //float mahdollistaa desimaalilukujen käytön. Laskukaavassa on käytetty suoran yhtälöä
-  Serial.println(aste);                    //Tulostaa sarjaporttiin ylemmän laskukaavan tuloksen. 
+  return (-9.00/70.00)*analogVal+91;  //float mahdollistaa desimaalilukujen käytön. Laskukaavassa on käytetty suoran yhtälöä
+  
+}
+
+void naytto(float x){
+  Serial.println(x);                    //Tulostaa sarjaporttiin ylemmän laskukaavan tuloksen. 
   delay(100);                              //viive jottei lukemia tule jatkuvalla syötöllä
   lcd.setCursor(0,1);                     //Asettaa tekstin alkamaan ensimmäisestä ruudusta vaakatasossa ja toiselta riviltä pystysuunnassa
-  lcd.print(aste);                        //Tulostaa LCD-näytölle ylempänä olevan laskukaavan tuloksen
+  lcd.print(x);                        //Tulostaa LCD-näytölle ylempänä olevan laskukaavan tuloksen
   lcd.print(" astetta");                //Tulostetun lukeman perään lisätty teksti selkeyttämään lukemista
-  if(aste > 27){                      //Jos lukema on enemmän kuin 27,
+}
+
+void ohjaus(float aste){
+    if(aste > 27){                      //Jos lukema on enemmän kuin 27,
     digitalWrite(LEDVIHREA, LOW);     //sammutetaan ledit joiden ei haluta palavan
     digitalWrite(LEDKELTAINEN, LOW);  //-..-
     korkea();                         //ajetaan äänimerkin funktio
@@ -68,4 +75,11 @@ void loop() {
   }else{
       digitalWrite(LEDVIHREA, LOW);   //Jottei mikään ledi jää palamaan, varmistetaan se sammuttamalla vihreä vielä tässä
   }
+}
+ 
+void loop() {
+  float a = mittaus();
+  naytto(a);
+  ohjaus(a);
+
 }
