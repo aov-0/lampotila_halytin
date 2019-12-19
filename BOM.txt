@@ -1,0 +1,15 @@
+﻿
+Part     Value         Device         Package       Description                                                                                       MF MPN OC_FARNELL OC_NEWARK SPICEPREFIX
+DIS1     TUXGR_16X2_R2 TUXGR_16X2_R2  TUXGR_16X2_R2 Tuxgraphics LCD display 16x2 characters reflective, without background light                             unknown    unknown              
+IC1                    ARDUINO2009_10 ARDUINO2009   The Arduino Duemilanove ("2009") is a microcontroller board based on the ATmega168  or ATmega328.                                        
+J1                     MTA04-100      10X04MTA      AMP connector                                                                                                                            
+LED1-VIH               LED5MM         LED5MM        LED                                                                                                                                      
+LED2-KEL               LED5MM         LED5MM        LED                                                                                                                                      
+LED3-PUN               LED10MM        LED10MM       LED                                                                                                                                      
+R1       220ohm        R-EU_0207/10   0207/10       RESISTOR, European symbol                                                                                                     R          
+R2       220ohm        R-EU_0207/10   0207/10       RESISTOR, European symbol                                                                                                     R          
+R3       220ohm        R-EU_0207/10   0207/10       RESISTOR, European symbol                                                                                                     R          
+R4       220ohm        R-EU_0207/10   0207/10       RESISTOR, European symbol                                                                                                     R          
+R5       220ohm        R-EU_0207/10   0207/10       RESISTOR, European symbol                                                                                                     R          
+R6       47K           TRIM_EU-LI10   LI10          POTENTIOMETER                                                                                                                            
+SG1      EFBAA40D101   EFBAA40D101    EFBAA40D101   Piezoelectric Acoustic Transducer                                                                        unknown    unknown              
